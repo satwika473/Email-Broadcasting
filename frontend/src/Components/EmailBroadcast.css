@@ -1,0 +1,241 @@
+.email-app {
+  display: flex;
+  height: 100vh;
+  font-family: "Google Sans", Roboto, Arial, sans-serif;
+  color: #202124;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background: #f1f3f4;
+  padding: 15px 10px;
+  border-right: 1px solid #dadce0;
+  display: flex;
+  flex-direction: column;
+}
+
+.compose-btn {
+  background: #c2e7ff;
+  border: none;
+  padding: 12px 20px;
+  margin: 10px 0 20px 0;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 30px;
+  color: #001d35;
+  transition: background 0.2s ease;
+}
+
+.compose-btn:hover {
+  background: #a8d8ff;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  padding: 12px 15px;
+  cursor: pointer;
+  border-radius: 20px;
+  font-size: 14px;
+  transition: background 0.2s ease;
+}
+
+.sidebar ul li:hover {
+  background: #e8eaed;
+}
+
+.sidebar ul li.active {
+  background: #d3e3fd;
+  font-weight: 500;
+}
+
+/* Main Section */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+}
+
+/* Top bar like Gmail search */
+/* App Header */
+.app-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: #f1f3f4;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  z-index: 1000;
+}
+
+.app-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #1a73e8;
+}
+
+.app-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.topbar {
+  padding: 10px 20px;
+  border-bottom: 1px solid #dadce0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search-box {
+  flex: 1;
+  margin: 0 20px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 8px 14px;
+  border-radius: 24px;
+  border: 1px solid #dadce0;
+  outline: none;
+  font-size: 14px;
+}
+
+.search-box input:focus {
+  border: 1px solid #1a73e8;
+  box-shadow: 0 0 2px rgba(26,115,232,0.5);
+}
+
+/* Email List */
+.email-list {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.email-item {
+  display: grid;
+  grid-template-columns: 30px 220px 1fr 120px;
+  align-items: center;
+  padding: 12px 20px;
+  border-bottom: 1px solid #f1f3f4;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.email-item:hover {
+  background: #f1f3f4;
+}
+
+.email-from {
+  font-weight: 500;
+  color: #202124;
+}
+
+.email-subject {
+  color: #5f6368;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.email-time {
+  text-align: right;
+  font-size: 12px;
+  color: #5f6368;
+}
+
+/* Compose Modal */
+.compose-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(32,33,36,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 40px;
+}
+
+.compose-box {
+  background: white;
+  width: 600px;
+  border-radius: 8px 8px 0 0;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  animation: slideUp 0.25s ease;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.compose-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f1f3f4;
+  padding: 10px 15px;
+  border-bottom: 1px solid #dadce0;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.compose-box input,
+.compose-box textarea {
+  margin: 8px 15px;
+  padding: 10px;
+  border: 1px solid #dadce0;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.compose-box textarea {
+  height: 200px;
+  resize: none;
+}
+
+.send-btn {
+  align-self: flex-end;
+  margin: 10px 15px 15px 15px;
+  background: #1a73e8;
+  color: white;
+  padding: 10px 22px;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+.send-btn:hover {
+  background: #1669c1;
+}
